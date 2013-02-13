@@ -5,7 +5,7 @@ pkgdesc='Viewer for Folding@Home'
 url="http://folding.stanford.edu/English/HomePage"
 arch=('i686' 'x86_64')
 license=('GPL3')
-depends=('gtk2' 'glib' 'pango')
+depends=('bzip2' 'nvidia-utils' 'gcc-libs-multilib')
 options=('!docs' '!libtool')
 
 if test "$CARCH" == i686; then
