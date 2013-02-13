@@ -7,12 +7,14 @@ arch=('i686' 'x86_64')
 license=('GPL3')
 depends=('bzip2' 'nvidia-utils' 'gcc-libs-multilib')
 options=('!docs' '!libtool')
+_common_url='https://fah-web.stanford.edu/file-releases/beta/release/fahviewer/'
+
 
 if test "$CARCH" == i686; then
-  source=(https://fah-web.stanford.edu/file-releases/beta/release/fahviewer/debian-testing-32bit/v7.3/fahviewer_${pkgver}_i386.deb)
-  md5sums=('97d6bc7a1a1f350518f4e443370456ed')
+  source=(${_common_url}debian-testing-32bit/v7.3/fahviewer_${pkgver}_i386.deb)
+  md5sums=('41311935ac552d59ccd8477a8e606981')
 else
-  source=(https://fah-web.stanford.edu/file-releases/beta/release/fahviewer/debian-testing-64bit/v7.3/fahviewer_${pkgver}_amd64.deb)
+  source=(${_common_url}debian-testing-64bit/v7.3/fahviewer_${pkgver}_amd64.deb)
   md5sums=('97d6bc7a1a1f350518f4e443370456ed')
 fi
 
