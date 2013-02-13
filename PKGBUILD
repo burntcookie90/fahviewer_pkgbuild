@@ -1,6 +1,6 @@
-pkgname=fahviewer
+pkgname=fahviewer-beta
 pkgver=7.3.4
-pkgrel=1
+pkgrel=8
 pkgdesc='Viewer for Folding@Home'
 url="http://folding.stanford.edu/English/HomePage"
 arch=('i686' 'x86_64')
