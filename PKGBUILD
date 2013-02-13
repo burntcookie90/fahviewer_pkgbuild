@@ -10,11 +10,12 @@ options=('!docs' '!libtool')
 
 if test "$CARCH" == i686; then
   source=(https://fah-web.stanford.edu/file-releases/beta/release/fahviewer/debian-testing-32bit/v7.3/fahviewer_${pkgver}_i386.deb)
+  md5sums=('97d6bc7a1a1f350518f4e443370456ed')
 else
   source=(https://fah-web.stanford.edu/file-releases/beta/release/fahviewer/debian-testing-64bit/v7.3/fahviewer_${pkgver}_amd64.deb)
+  md5sums=('97d6bc7a1a1f350518f4e443370456ed')
 fi
 
-md5sums=('97d6bc7a1a1f350518f4e443370456ed')
 
 # Moronic server
 DLAGENTS=("https::/usr/bin/curl -k -o %o %u")
