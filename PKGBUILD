@@ -1,14 +1,19 @@
 pkgname=fahviewer
 pkgver=7.3.4
 pkgrel=1
-pkgdesc='This is the new and fully functional work unit viewer. FAHViewer (FVR) is modeled after the very popular PS3 viewer, and continues the many rendering options, ball and stick, space fill, zoom, rotation, etc., and adds snapshot capture and cycling to show folding in action.'
+pkgdesc='Viewer for Folding@Home'
 url="http://folding.stanford.edu/English/HomePage"
-arch=('i686 x86_64')
+arch=('i686' 'x86_64')
 license=('GPL3')
 depends=('gtk2' 'glib' 'pango')
 options=('!docs' '!libtool')
-source=(https://fah-web.stanford.edu/file-releases/beta/release/fahviewer/debian-testing-64bit/v7.3/fahviewer_${pkgver}_amd64.deb)
-#https://fah-web.stanford.edu/file-releases/beta/release/fahviewer/debian-testing-32bit/v7.3/fahviewer_7.3.4_i386.deb
+
+if test "$CARCH" == i686; then
+  source=(https://fah-web.stanford.edu/file-releases/beta/release/fahviewer/debian-testing-32bit/v7.3/fahviewer_${pkgver}_i386.deb)
+else
+  source=(https://fah-web.stanford.edu/file-releases/beta/release/fahviewer/debian-testing-64bit/v7.3/fahviewer_${pkgver}_amd64.deb)
+fi
+
 md5sums=('97d6bc7a1a1f350518f4e443370456ed')
 
 # Moronic server
