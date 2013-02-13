@@ -9,7 +9,7 @@ depends=('bzip2' 'nvidia-utils' 'gcc-libs-multilib')
 options=('!docs' '!libtool')
 _common_url='https://fah-web.stanford.edu/file-releases/beta/release/fahviewer/'
 
-
+#test for architecture, pull down appropriate file
 if test "$CARCH" == i686; then
   source=(${_common_url}debian-testing-32bit/v7.3/fahviewer_${pkgver}_i386.deb)
   md5sums=('41311935ac552d59ccd8477a8e606981')
@@ -18,8 +18,6 @@ else
   md5sums=('97d6bc7a1a1f350518f4e443370456ed')
 fi
 
-
-# Moronic server
 DLAGENTS=("https::/usr/bin/curl -k -o %o %u")
 
 package() {
@@ -31,5 +29,3 @@ package() {
   install -D -m0644 ${srcdir}/usr/share/pixmaps/FAHViewer*.png ${pkgdir}/usr/share/pixmaps/FAHViewer.png
   install -D -m0644 ${srcdir}/usr/share/applications/FAHViewer.desktop ${pkgdir}/usr/share/applications/FAHViewer.desktop
 }
-
-# vim:set ts=2 sw=2 et:
